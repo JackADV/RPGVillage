@@ -159,7 +159,7 @@ public static class ItemData
                 description = "It is better than all daggers before it";
                 icon = "Quest/Dagger_Icon";
                 mesh = "Quest/Dagger_Mesh";
-                type = ItemType.Food;
+                type = ItemType.Quest;
                 amount = 1;
                 break;
             case 402:
@@ -168,7 +168,7 @@ public static class ItemData
                 description = "It holds many truths";
                 icon = "Quest/Book_Icon";
                 mesh = "Quest/Bok_Mesh";
-                type = ItemType.Food;
+                type = ItemType.Quest;
                 amount = 1;
                 break;
             #endregion

@@ -50,6 +50,11 @@ public class Interact : MonoBehaviour
                 {
                     //Debug that we hit an Item
                     Debug.Log("Item");
+                    ItemHandler handler = hitInfo.transform.GetComponent<ItemHandler>();
+                    if (handler != null)
+                    {
+                        handler.OnCollection();
+                    }
                 }
                 #endregion
             }

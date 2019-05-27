@@ -41,7 +41,7 @@ public class Item
         //get the private Identification Number
         get { return _id; }
         //and set it to the value of our public Identification Number
-        set { _id = _value; }
+        set { _id = value; }
 
     }
     public string Name
@@ -62,7 +62,7 @@ public class Item
     public Texture2D icon
     {
         get { return _icon; }
-        set { icon = value; }
+        set { _icon = value; }
     }
     public GameObject Mesh
     {
