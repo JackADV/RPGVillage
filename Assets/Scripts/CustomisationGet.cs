@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using UnityEngine.UI;
+using TMPro;
 //you will need to change Scenes
 public class CustomisationGet : MonoBehaviour
 {
@@ -8,9 +11,11 @@ public class CustomisationGet : MonoBehaviour
     //[Header("Character")]
     //public variable for the Skinned Mesh Renderer which is our character reference
     public Renderer character;
-
+    public TextMeshProUGUI CharName;
+    public TextMeshProUGUI CharRace;
+    public TextMeshProUGUI[] stats;
     #region Start
-    private void Start()
+    public void Start()
     {
         //our character reference connected to the Skinned Mesh Renderer via finding the Mesh
         character = GameObject.FindGameObjectWithTag
@@ -21,12 +26,22 @@ public class CustomisationGet : MonoBehaviour
     #endregion
 
     #region LoadTexture Function
-    void LoadTexture()
+    public void LoadTexture()
     {
-        //check to see if our save file for this character
-        //if it doesnt then load the CustomSet level
-        //if it does have a save file then load and SetTexture Skin, Hair, Mouth and Eyes from binary
-        //grab the gameObject in scene that is our character and set its Object name to the Characters name
+        CustomisationSave data = SaveCustomSet.LoadCustomSet();
+        SetTexture("Skin", data.skinIndex);
+        SetTexture("Hair", data.hairIndex);
+        SetTexture("Mouth", data.mouthIndex);
+        SetTexture("Eyes", data.eyesIndex);
+        SetTexture("Clothes", data.clothesIndex);
+        SetTexture("Armour", data.armourIndex);
+        this.gameObject.name = data.characterName;
+        CharName.text = data.characterName;
+        CharRace.text = data.charRace;
+        for (int i = 0; i < 6; i++)
+        {
+            stats[i].text = data.stats[i].ToString();
+        }
     }
 
     #endregion
@@ -41,7 +56,7 @@ public class CustomisationGet : MonoBehaviour
         Texture2D tex = null;
         int matIndex = 0;
         //inside a switch statement that is swapped by the string name of our material
-             
+
         switch (type)
         {
             //case skin
@@ -53,31 +68,31 @@ public class CustomisationGet : MonoBehaviour
                 break;
 
             case "Hair":
-                
+
                 tex = Resources.Load("Character/Hair_" + index) as Texture2D;
                 matIndex = 2;
                 break;
 
             case "Mouth":
-               
+
                 tex = Resources.Load("Character/Mouth_" + index) as Texture2D;
                 matIndex = 3;
                 break;
 
             case "Eyes":
-                
+
                 tex = Resources.Load("Character/Eyes_" + index) as Texture2D;
                 matIndex = 4;
                 break;
 
             case "Clothes":
-               
-                tex = Resources.Load("Character/Skin_" + index) as Texture2D;
+
+                tex = Resources.Load("Character/Clothes_" + index) as Texture2D;
                 matIndex = 5;
                 break;
 
             case "Armour":
-               
+
                 tex = Resources.Load("Character/Armour_" + index) as Texture2D;
                 matIndex = 6;
                 break;

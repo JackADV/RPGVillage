@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public static class SaveCustomSet
@@ -30,7 +31,7 @@ public static class SaveCustomSet
     }
         else
         {
-            Debug.Log("Couldn't find file to load");
+            Debug.Log("Couldn't find file to load" + path);
             return null;
 
         }

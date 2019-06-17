@@ -324,11 +324,14 @@ public class CustomisationSet : MonoBehaviour
     }
     #endregion
     #region Save
-    void Save()
+   public void Save()
     {
+        SaveCustomSet.CustomisationSet(this);
+        //SaveSystem.SavePlayer(this);
         //Function called Save this will allow us to save our indexes 
         //SetInt for SkinIndex, HairIndex, MouthIndex, EyesIndex
         //SetString CharacterName
+        SceneManager.LoadScene(1);
     }
     #endregion
     //private void OnGUI()
