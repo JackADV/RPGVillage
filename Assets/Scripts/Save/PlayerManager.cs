@@ -4,27 +4,32 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    #region Varibles
     public int level;
     public new string name;
     public float maxHp, curHp;
     public LinearhealthBar.Health health;
     public CheckPoint checkpoint;
     public float x, y, z;
+    #endregion
 
 
-
-
+    #region Save Player
     public void SavePlayer()
     {
-        curHp = health.curHealth;
-        maxHp = health.maxHealth;
-        x = checkpoint.curCheckPoint.x;
+        // information that is to be saved
+        curHp = health.curHealth; // players current health
+        maxHp = health.maxHealth; // Players max health
+        x = checkpoint.curCheckPoint.x; // Their current location
         y = checkpoint.curCheckPoint.y;
         z = checkpoint.curCheckPoint.z;
-        Save.SavePlayerData(this);
+        Save.SavePlayerData(this); // Save this information
     }
+    #endregion
+    #region load Player
     public void LoadPlayer()
     {
+        // All of the data that has been saved (see above) will be loaded
         DataToSave data = Save.LoadPlayerData();
         level = data.level;
         name = data.playerName;
@@ -38,4 +43,5 @@ public class PlayerManager : MonoBehaviour
         this.transform.position = new Vector3(x, y, z);
 
     }
+    #endregion
 }

@@ -11,9 +11,9 @@ public class CustomisationGet : MonoBehaviour
     //[Header("Character")]
     //public variable for the Skinned Mesh Renderer which is our character reference
     public Renderer character;
-    public TextMeshProUGUI CharName;
-    public TextMeshProUGUI CharRace;
-    public TextMeshProUGUI[] stats;
+    public TextMeshProUGUI CharName; // Public varible for text for the characters name
+    public TextMeshProUGUI CharRace; // Public varible for text for the characters race
+    public TextMeshProUGUI[] stats; // Public varible for text for the characters stats
     #region Start
     public void Start()
     {
@@ -28,6 +28,7 @@ public class CustomisationGet : MonoBehaviour
     #region LoadTexture Function
     public void LoadTexture()
     {
+        // This function is saying, load all of the pieces and information of the players character
         CustomisationSave data = SaveCustomSet.LoadCustomSet();
         SetTexture("Skin", data.skinIndex);
         SetTexture("Hair", data.hairIndex);

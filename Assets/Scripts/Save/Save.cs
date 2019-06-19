@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class Save
 {
+    #region Save Player Data
     public static void SavePlayerData(PlayerManager player)
     {
         // reference to binary formatter
@@ -19,6 +20,8 @@ public static class Save
         // end 
         stream.Close();
     }
+    #endregion
+    #region Load Player Data
     public static DataToSave LoadPlayerData()
     {
         string path = Application.persistentDataPath + "/Save.png";
@@ -37,6 +40,7 @@ public static class Save
 
         }
     }
+    #endregion
 
 
 }
