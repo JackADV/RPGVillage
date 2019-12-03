@@ -17184,6 +17184,7 @@ GameObject:
   - component: {fileID: 1532867641153494209}
   - component: {fileID: 1532867641146109821}
   - component: {fileID: 1532867641146109820}
+  - component: {fileID: 1532867641146109822}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Player
@@ -17219,17 +17220,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 661fcda8a67a85342abd63a05657f767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scr: {x: 0, y: 0}
-  scrollPos: {x: 0, y: 0}
-  sortTypes: []
-  selectedType: 
-  equipedLocations:
-  - {fileID: 1532867641146077963}
-  - {fileID: 1532867641146077995}
-  dropLocation: {fileID: 1532867641146077963}
-  curWeapon: {fileID: 0}
-  curHelm: {fileID: 0}
-  health: {fileID: 1532867641146109820}
+--- !u!114 &1532867641146109822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532867641146109819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185a5fb749a79fa4fb60e4b55ac96861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showSelectMenu: 1
+  toggleTogglable: 0
+  scrW: 0
+  scrH: 0
+  radialTexture: {fileID: 2800000, guid: a24eff2951b49b9469ebebbec1598121, type: 3}
+  slotTexture: {fileID: 2800000, guid: 281dfd46b28125f4ebba6139f992c903, type: 3}
+  circleScaleOffset: 0
+  iconSize: {x: 0, y: 0}
+  showIcons: 1
+  showBoxes: 1
+  showBounds: 1
+  iconSizeNum: 1
+  radialRotation: 0
+  iconOffset: 0
+  mouse: {x: 0, y: 0}
+  input: {x: 0, y: 0}
+  inputDist: 0
+  inputAngle: 0
+  keyIndex: 0
+  mouseIndex: 0
+  inputIndex: 0
+  slotPos:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  boundPos:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  numOfSectors: 8
+  circleRadius: 160
+  mouseDistance: 0
+  sectorDegree: 0
+  mouseAngles: 0
+  sectorIndex: 0
+  withinCircle: 0
 --- !u!95 &1532867641153494209
 Animator:
   serializedVersion: 3
